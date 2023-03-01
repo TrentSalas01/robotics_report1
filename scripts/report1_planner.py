@@ -16,48 +16,49 @@ if __name__ == '__main__':
     loop_rate = rospy.Rate(10)
     # define a plan variable
     plan = Plan()
+    
+    #Motion 1: Starting place
     plan_point1 = Twist()
-    # just a quick solution to send two target points
-    # # define a point close to the initial position
     plan_point1.linear.x = -0.53
     plan_point1.linear.y = -0.13
     plan_point1.linear.z = 0.37
     plan_point1.angular.x = -2.98
     plan_point1.angular.y = -0.03
     plan_point1.angular.z = 1.95
-    # add this point to the plan
+    # add point 1 to the plan
     plan.points.append(plan_point1)
+    
+    #Motion 2: "Pick Up" Object
     plan_point2 = Twist()
-    # define a point away from the initial position
     plan_point2.linear.x = -0.53
     plan_point2.linear.y = -0.13
     plan_point2.linear.z = 0.03
     plan_point2.angular.x = -2.98
     plan_point2.angular.y = -0.13
     plan_point2.angular.z = 1.93
-    # add this point to the plan
+    # add point 2 to the plan
     plan.points.append(plan_point2)
 
+    #Motion 3: Move Object Further
     plan_point3 = Twist()
-    # define a point away from the initial position
     plan_point3.linear.x = -0.73
     plan_point3.linear.y = -0.13
     plan_point3.linear.z = 0.35
     plan_point3.angular.x = -3.1
     plan_point3.angular.y = -0.12
     plan_point3.angular.z = 1.93
-    # add this point to the plan
+    # add point 3 to the plan
     plan.points.append(plan_point3)
 
+    #Motion 4: Lowering Object
     plan_point4 = Twist()
-    # define a point away from the initial position
     plan_point4.linear.x = -0.87
     plan_point4.linear.y = -0.13
     plan_point4.linear.z = 0.1
     plan_point4.angular.x = -2.88
     plan_point4.angular.y = -0.00
     plan_point4.angular.z = 1.92
-    # add this point to the plan
+    # add tpoint 4 to the plan
     plan.points.append(plan_point4)
 
     while not rospy.is_shutdown():
