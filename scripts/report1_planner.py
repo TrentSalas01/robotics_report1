@@ -4,7 +4,7 @@ import rospy
 import math
 
 # import the plan message
-from ur5e_control.msg import Plan
+from robotics_report1.msg import Plan
 from geometry_msgs.msg import Twist
 
 if __name__ == '__main__':
